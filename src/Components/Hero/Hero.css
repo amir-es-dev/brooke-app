@@ -1,0 +1,92 @@
+.hero {
+  background-color: var(--color-bgcolor);
+  padding: 16.6rem 1.6rem 9.1rem 1.6rem;
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__image img {
+  width: 100%;
+  border-radius: 13%;
+}
+
+.hero__image {
+  margin-bottom: 4rem;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__content h1 {
+  color: var(--color-body);
+  white-space: break-spaces;
+  margin-bottom: 1.6rem;
+}
+
+.hero__links {
+  color: var(--color-primary);
+  margin-bottom: 4rem;
+}
+
+.hero__links a {
+  color: var(--color-primary);
+}
+
+.hero__btn {
+  display: flex;
+}
+.hero__btn a {
+  text-decoration: none;
+  color: white;
+  background-color: var(--color-primary);
+  line-height: 1.4;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 1.4rem 3.2rem;
+}
+
+.hero__btn a:hover {
+  background-color: #5d5ca1;
+}
+
+@media screen and (min-width: 920px) {
+  .hero {
+    padding: 8.7rem 0 6rem 4.5rem;
+  }
+  .hero .container {
+    flex-direction: row-reverse;
+    height: 87rem;
+  }
+
+  .hero__image img {
+    object-fit: cover;
+    height: 100%;
+  }
+  .hero__image {
+    width: 50%;
+    margin-bottom: 0;
+  }
+
+  .hero__content {
+    width: 50%;
+    position: relative;
+    justify-content: center;
+  }
+  .hero__content h1 {
+    margin-bottom: 9rem;
+  }
+  .hero__links {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .hero__btn a {
+    padding: 1.4rem 4rem;
+  }
+}

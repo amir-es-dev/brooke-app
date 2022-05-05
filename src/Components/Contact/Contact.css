@@ -1,0 +1,97 @@
+.contact {
+  padding: 10rem 1.6rem;
+}
+.contact .form {
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.contact .sumbit-box {
+  width: 100%;
+  height: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+}
+.contact label {
+  display: block;
+}
+
+.contact .name,
+.contact .email,
+.contact .text {
+  margin-bottom: 2.4rem;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 1.2rem 5.6rem 1.2rem 1.6rem;
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+
+  font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+  color: var(--color-body);
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+  font-size: 1.4rem;
+  font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+}
+
+.contact button {
+  background-color: var(--color-primary);
+  padding: 1.4rem 3.2rem;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.4;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.contact button:hover {
+  background-color: #5d5ca1;
+}
+
+.contact p {
+  color: #888;
+}
+
+.contact img {
+  width: 100%;
+  border-radius: 13%;
+}
+
+@media screen and (min-width: 920px) {
+  .contact {
+    padding: 6.5rem 0 13rem 4.5rem;
+  }
+  .contact .container {
+    display: flex;
+    height: 69rem;
+  }
+
+  .contact .form {
+    width: 48.5%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact img {
+    width: 51.5%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .contact h2 {
+    margin-bottom: 8rem;
+  }
+}

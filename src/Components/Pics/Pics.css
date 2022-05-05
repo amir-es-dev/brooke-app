@@ -1,0 +1,37 @@
+.pics {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.6rem 8rem 1.6rem;
+}
+
+.pics img {
+  width: 100%;
+  border-radius: 13%;
+  margin-bottom: 1.6rem;
+}
+
+@media screen and (min-width: 920px) {
+  .pics {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8rem 0 0 0;
+  }
+
+  .pics img {
+    height: 56rem;
+    object-fit: cover;
+    border-radius: 40px;
+  }
+
+  .pics img:nth-child(1) {
+    width: 25.75%;
+  }
+  .pics img:nth-child(2) {
+    width: 43.5%;
+    flex-grow: 1;
+    margin: 0 2.25rem;
+  }
+  .pics img:nth-child(3) {
+    width: 25.75%;
+  }
+}

@@ -1,0 +1,79 @@
+.experience {
+  padding: 10rem 1.6rem;
+  background-color: var(--color-bgcolor);
+  white-space: break-spaces;
+}
+
+.experience h6 {
+  margin-bottom: 4rem;
+}
+.experience h5 {
+  color: var(--color-body);
+  margin-bottom: 1.6rem;
+  font-weight: 400;
+}
+
+.experience p {
+  color: var(--color-body);
+}
+.work__content .first {
+  margin-bottom: 4rem;
+}
+.work__content .second {
+  margin-bottom: 10rem;
+}
+
+.work__content .first p:nth-of-type(1),
+.work__content .second p:nth-of-type(1) {
+  margin-bottom: 3.2rem;
+}
+
+.education__content .first {
+  margin-bottom: 6rem;
+}
+.education__content .second {
+  margin-bottom: 8rem;
+}
+
+.course__content .first {
+  margin-bottom: 1.6rem;
+}
+
+@media screen and (min-width: 920px) {
+  .experience {
+    padding: 14rem 0 19rem 4.5rem;
+  }
+
+  .experience .work,
+  .experience .education,
+  .experience .course {
+    display: flex;
+  }
+
+  .experience .work h6,
+  .experience .education h6,
+  .experience .course h6 {
+    width: 41%;
+  }
+  .experience .work .work__content,
+  .experience .education .education_content,
+  .experience .course h6 .course__content {
+    width: 59%;
+    padding-right: 5rem;
+  }
+
+  .work__content .first {
+    margin-bottom: 3.2rem;
+  }
+
+  .work__content .second {
+    margin-bottom: 16rem;
+  }
+
+  .education__content .second {
+    margin-bottom: 12rem;
+  }
+  .course__content .first {
+    margin-bottom: 5.5rem;
+  }
+}
