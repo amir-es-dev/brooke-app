@@ -1,8 +1,8 @@
 import "./Header.css";
 import brookeLogo from "../../images/brooke-logo.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Header = ({ scroll }) => {
+const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [navItem, setNavItem] = useState([
     { value: "about me", hoverd: false, href: "aboutMe" },
@@ -10,6 +10,22 @@ const Header = ({ scroll }) => {
     { value: "testimonials", hoverd: false, href: "testimonial" },
     { value: "contacts", hoverd: false, href: "contact" },
   ]);
+  const [scroll, setScroll] = useState(false);
+
+  const scrollCheck = () => {
+    if (window.scrollY > 0) {
+      setScroll(true);
+      return;
+    }
+    setScroll(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollCheck);
+    return () => {
+      window.removeEventListener("scroll", scrollCheck);
+    };
+  }, []);
 
   const handleClick = () => {
     setNavOpen((prev) => !prev);

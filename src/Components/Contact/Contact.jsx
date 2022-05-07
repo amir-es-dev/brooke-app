@@ -4,33 +4,28 @@ import "./Contact.css";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [email, setEmail] = useState("");
-  const [text, setText] = useState("");
+  const [valid, setValid] = useState({ email: "valid", text: "valid" });
 
   const handleClick = (e) => {
     e.preventDefault();
-    setText(false);
-    setEmail(0);
-    if (!e.target[1].value) {
-      if (!e.target[2].value) {
-        setText(true);
-      }
-      setEmail(1);
-      return;
-    }
+    let isEmailValid = "valid";
+    let isTextValid = "valid";
+    // setEmail(0);
     if (!ValidateEmail(e.target[1].value)) {
-      if (!e.target[2].value) {
-        setText(true);
-      }
-      setEmail(2);
-      return;
+      isEmailValid = "validnt";
+    }
+    if (!e.target[1].value) {
+      isEmailValid = "empty";
     }
     if (!e.target[2].value) {
-      setText(true);
-      return;
+      isTextValid = "empty";
     }
 
-    setSubmitted(true);
+    setValid({ email: isEmailValid, text: isTextValid });
+
+    if (isEmailValid === "valid" && isTextValid === "valid") {
+      setSubmitted(true);
+    }
   };
 
   function ValidateEmail(mail) {
@@ -48,7 +43,7 @@ const Contact = () => {
           {submitted ? (
             <div className="sumbit-box">Thank You!</div>
           ) : (
-            <form onSubmit={(e) => handleClick(e)}>
+            <form onSubmit={handleClick}>
               <div className="name">
                 <label htmlFor="name">Name</label>
                 <input type="text" id="name" placeholder="Your name" />
@@ -60,8 +55,10 @@ const Contact = () => {
                   id="email"
                   placeholder="Your email address"
                 />
-                {email === 1 && <p>This field is required</p>}
-                {email === 2 && <p>Please enter a valid email address</p>}
+                {valid.email === "empty" && <p>This field is required</p>}
+                {valid.email === "validnt" && (
+                  <p>Please enter a valid email address</p>
+                )}
               </div>
               <div className="text">
                 <label htmlFor="message">Message*</label>
@@ -72,7 +69,7 @@ const Contact = () => {
                   rows="3"
                   placeholder="Enter your message"
                 ></textarea>
-                {text && <p>This field is required</p>}
+                {valid.text === "empty" && <p>This field is required</p>}
               </div>
               <button type="submit">Submit</button>
             </form>

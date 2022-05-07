@@ -8,24 +8,11 @@ import Quote from "./Components/Quote/Quote";
 import Testimonial from "./Components/Testimonial/Testimonial";
 import Contact from "./Components/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
-import { useEffect, useState } from "react";
 
 function App() {
-  const [scroll, setScroll] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 0) {
-        setScroll(true);
-        return;
-      }
-      setScroll(false);
-    });
-  });
-
   return (
     <div className="App">
-      <Header scroll={scroll} />
+      <Header />
       <Hero />
       <AboutMe />
       <Pics />
